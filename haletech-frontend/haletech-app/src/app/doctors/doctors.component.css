@@ -1,0 +1,36 @@
+
+table {
+    width: 100%;
+
+  }
+
+tr{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+td{
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
+
+thead{
+    padding-top: 25px;
+    padding-bottom: 5px;
+    line-height: 40px;
+}
+
+tbody{
+    padding-top: 25px;
+    padding-bottom: 5px;
+    line-height: 50px;
+}
+
+.search{
+    width: 20%;
+    margin-bottom: 30px;
+    margin-left: 70%;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "id": "soham",
+      "name": "soham",
+      "email": "soham@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "isactive": "true"
+    },
+    {
+      "id": "sohamchak",
+      "name": "soham",
+      "email": "soham@gmail.com",
+      "password": "147258369",
+      "role": "",
+      "isactive": "false"
+    }
+  ]
+}

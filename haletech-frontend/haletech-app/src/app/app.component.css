@@ -1,0 +1,45 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://getwallpapers.com/wallpaper/full/b/c/c/7129.jpg');
+    
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+.nav-link{
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.login{
+    
+    width: 100px;
+    background-color: rgb(63, 73, 158);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    
+    
+}
+
+.navbar{
+    background-color: rgb(255, 195, 255);
+}
+
+button:hover,a:hover,a:after{
+    color: rgb(255, 145, 0);
+}
+
+button:focus,a:focus{
+    color: rgb(255, 145, 0);
+
+    
+}
+
+
+

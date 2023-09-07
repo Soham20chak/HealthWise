@@ -1,0 +1,44 @@
+<h2 style="font-family: 'Poppins', sans-serif;" class="header-text">List of Appointments</h2>
+<div class="search">
+    
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search your appointments">
+    <i class="far fa-search"></i>
+</div>
+<div *ngIf="this.patients.length===0; else elseBlock">No Appointments to display</div>
+<ng-template #elseBlock>
+<table mat-table class="table mat-elevation-z8 container">
+    <thead>
+        <tr>
+        <th mat-header-cell>Name</th>
+        <th mat-header-cell>Description</th>
+        <th mat-header-cell>Phone No</th>
+        <th mat-header-cell>Age</th>
+        <th mat-header-cell>Gender</th>
+        
+        <th mat-header-cell>Date</th>
+        <th mat-header-cell>Doctor</th> 
+        <th mat-header-cell>Changes/Actions</th>       
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let patient of patients |filter:searchText">
+            <td mat-cell>{{patient.name}}</td>
+            <td mat-cell>{{patient.desc}}</td>
+            <td mat-cell>{{patient.phone}}</td>
+            <td mat-cell>{{patient.age}}</td>
+            <td mat-cell>{{patient.gender}}</td>
+            <td mat-cell>{{patient.appointmentdate}}</td>
+            <td mat-cell>{{patient.doctor}}</td>
+            <td>
+                <button (click)="updatePatient(patient.id)" mat-raised-button color="primary">Update</button>
+                
+            </td>
+            <td>
+            <button (click)="deletePatient(patient.id)" mat-raised-button color="warn">Delete</button>
+        </td>
+        </tr>        
+    </tbody>
+</table>
+<div>
+    <br>
+</div>

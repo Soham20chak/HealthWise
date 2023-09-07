@@ -1,0 +1,110 @@
+<div class="col-md-6 offset-md-3">
+<h3 style="font-family: 'Poppins', sans-serif;" class="header-text">Register New Doctors</h3>
+<div class="text-center">
+    <img style="height: 40%;width: 40%;margin-bottom: spx;" src="https://img.freepik.com/premium-vector/concept-doctor-illustration_598748-175.jpg?w=2000" class="img-fluid" >
+    </div>
+
+    <div class=" container text-center"  style="display: flex;justify-content: center;align-items: center; margin-bottom: 100px;">
+        <mat-card style="background-color: blanchedalmond; " class="example-card text-center">
+            <mat-card-content><img class="image" src="https://signup.hive.io/images/members.svg"></mat-card-content>
+            <mat-card-content>
+                Register new doctors or support staff and make this community bigger and better . We are always in urgent need of anyone who has the urge to save someone's life . We believe that humanity is the biggest form of virtue !
+        
+        </mat-card-content>
+        </mat-card>
+        </div>
+<form style="margin-bottom: 30px;" (ngSubmit)="onSubmit()">
+    <mat-form-field class="col-12">
+        <mat-label> Name of the doctor</mat-label>
+        <input matInput type="text"  id="name" [(ngModel)]="doctor.name" name="name">
+    </mat-form-field>
+    <div class="row">
+        <mat-form-field class="col-6">
+            <mat-label> Qualification </mat-label>
+            <input matInput type="text"  id="qualification" [(ngModel)]="doctor.qualification"
+                name="qualification">
+        </mat-form-field>
+        <mat-form-field class="col-6">
+            <mat-label> Specialization </mat-label>
+            <input matInput type="text"  id="specialization" [(ngModel)]="doctor.specialization"
+                name="specialization">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field class=" col-6">
+            <mat-label> Date of Birth </mat-label>
+            <input matInput type="text"  id="dob" [(ngModel)]="doctor.dob"
+                name="dob">
+        </mat-form-field>
+        <mat-form-field class=" col-6">
+            <mat-label> Phone Number </mat-label>
+            <input matInput type="text"  id="phoneno" [(ngModel)]="doctor.phoneno"
+                name="phoneno">
+        </mat-form-field>
+    </div>
+    <div class="row">
+    <mat-form-field class="col-12">
+        <mat-label> Email Id</mat-label>
+        <input matInput type="email"  id="email" [(ngModel)]="doctor.email" name="email">
+    </mat-form-field>
+</div>
+<div  class="container text-center">
+    <button  class="btn" mat-raised-button color="accent" type="submit">Confirm Registration</button>
+</div>
+
+</form>
+</div>
+<h2 style="font-family: 'Poppins', sans-serif;" class="header-text">Doctors List</h2>
+<div class=" container text-center"  style="display: flex;justify-content: center;align-items: center; margin-bottom: 100px;width: 40%;">
+    <mat-card style="background-color: blanchedalmond; " class="example-card text-center">
+        <mat-card-content><img class="image" src="https://img.freepik.com/premium-vector/group-doctors-nurses-standing-together-different-poses-medical-people-hospital-staff_153629-197.jpg"></mat-card-content>
+        <mat-card-content>
+           Below we have a list of all the doctors available with us in this journey . You can make any updates , addition or deletion of doctor details from the buttons provided below . Have a nice day .
+    
+    </mat-card-content>
+    </mat-card>
+    </div>
+<div class="search">
+    
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search your appointments">
+    <i class="far fa-search"></i>
+</div>
+<div *ngIf="this.doctors.length===0; else elseBlock">No Doctors to display</div>
+<ng-template #elseBlock>
+<table mat-table class="table mat-elevation-z8 container">
+    <thead>
+        <tr>
+        <th mat-header-cell>Name</th>
+        <th mat-header-cell>Qualification</th>
+        <th mat-header-cell>Date of Birth</th>
+        <th mat-header-cell>Specializaton</th>
+        <th mat-header-cell>Phone No</th>
+        <th mat-header-cell>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let doctor of doctors|filter:searchText">
+            <td mat-cell>{{doctor.name}}</td>
+            <td mat-cell>{{doctor.qualification}}</td>
+            <td mat-cell>{{doctor.dob}}</td>
+            <td mat-cell>{{doctor.specialization}}</td>
+            <td mat-cell>{{doctor.phoneno}}</td>
+            <td mat-cell>{{doctor.email}}</td>
+            <td>
+                <button (click)="updateDoctor(doctor.id)" mat-raised-button color="primary" class="btn ">Update</button>
+            </td>
+            <td>
+                <button (click)="deleteDoctor(doctor.id)" color="warn" mat-raised-button class="btn btn-danger">Delete</button>
+            </td>
+        <td>
+                <button (click)="doctorDetails(doctor.id)" color="accent" mat-raised-button class="btn btn-info">View</button>
+            </td>    
+        </tr>
+        
+    </tbody>
+</table>
+
+<div style="padding-top: 20px;">
+
+</div>

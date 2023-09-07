@@ -1,0 +1,54 @@
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);  overflow: hidden;
+  will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFttdjVDWA&#x2F;view?embed" >
+  </iframe>
+</div>
+
+<h2 class="text-center" style="margin-top: 20px; font-family: 'Poppins', sans-serif;font-size: 25px;font-weight: bolder;">This is the List of Doctors with whom you can schedule an appointment</h2>
+<div class="search">
+    
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Start searching for the doctor">
+    <i class="far fa-search"></i>
+</div>
+<div *ngIf="this.doctors.length===0; else elseBlock">No Doctors to display</div>
+<ng-template #elseBlock>
+<table style="margin-bottom: 50px;" mat-table  class="mat-elevation-z8 table container">
+    <thead>
+        <tr>
+        <th mat-header-cell >Name</th>
+        <th mat-header-cell >Qualification</th>
+        
+        <th mat-header-cell >Specializaton</th>
+        
+        <th mat-header-cell >Email</th> 
+        <th mat-header-cell >Check Doctor Details</th>        
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let doctor of doctors | filter:searchText">
+            <td mat-cell>{{doctor.name}}</td>
+            <td mat-cell>{{doctor.qualification}}</td>
+            
+            <td mat-cell>{{doctor.specialization}}</td>
+            
+            <td mat-cell>{{doctor.email}}</td>
+            <td>
+                <button (click)="doctorDetails(doctor.id)" color="indigo-palette" mat-raised-button class="btn btn-info">View</button>
+            </td> 
+            <!--<td>
+                <button (click)="updateDoctor(doctor.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteDoctor(doctor.id)" class="btn btn-danger">Delete</button>
+                <button (click)="doctorDetails(doctor.id)" class="btn btn-info">View</button>
+            </td>-->
+        </tr>        
+    </tbody>
+</table>
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>

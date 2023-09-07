@@ -1,0 +1,71 @@
+<div class="container">
+
+
+
+<div class="row " style="margin-top: 25px;margin-bottom: 20px;">
+<div class="text-center col-6">
+<mat-card style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;" class="example-card">
+    
+    <img style="height: 30%;width: 100%;" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <div class="text1">
+            <label><b>Name:&nbsp;&nbsp;</b></label>{{doctor.name}}
+        </div>
+        <div class="text1">
+            <label><b>Qualification:&nbsp;&nbsp;</b></label>{{doctor.qualification}}
+        </div>
+        <div class="text1">
+            <label><b>Date of Birth:&nbsp;&nbsp;</b></label>{{doctor.dob}}
+        </div>
+        <div class="text1">
+            <label><b>Specialization:&nbsp;&nbsp;</b></label>{{doctor.specialization}}
+        </div>
+        <div class="text1">
+            <label><b>Phone Number:&nbsp;&nbsp;</b></label>{{doctor.phoneno}}
+        </div>
+        <div class="text1">
+            <label><b>Email:&nbsp;&nbsp;</b><br></label>{{doctor.email}}
+        </div>
+    </mat-card-content>
+    <div class="container text-center">
+        <button style="margin-top: 20px;margin-bottom: 18px;" class="btn" mat-raised-button color="accent" routerLink="/appointments">Book an appointment </button>
+        </div>
+  </mat-card>
+</div>
+
+<div class="col-6">
+    <mat-card style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;">
+        <mat-card-content class="text">Testimonial</mat-card-content>
+        <mat-card-content class="text2">
+    Patient Outcomes:
+
+Achieved consistently high patient satisfaction ratings in surveys.
+Improved patient health outcomes, such as reduced complications or improved disease management.
+Maintained a low rate of hospital readmissions among patients under care.
+Clinical Excellence:
+
+Published research in reputable medical journals or presented findings at conferences.
+Implemented innovative treatment approaches or protocols that led to better patient outcomes.
+Received awards or recognition for clinical excellence or contributions to the field of medicine.
+Education and Training:
+
+Mentored and supervised medical students, residents, or fellows, contributing to their professional development.
+Participated in continuing medical education (CME) to stay current with the latest advancements in the field.
+Leadership and Collaboration:
+
+Served in leadership roles within medical departments or committees.
+Fostered effective teamwork and collaboration among healthcare professionals, improving patient care coordination.
+Actively participated in interdisciplinary rounds or case conferences.
+In summary, {{doctor.name}} is an exemplary physician who consistently goes above and beyond in delivering exceptional patient care.
+
+
+
+
+
+</mat-card-content>
+</mat-card>
+</div>
+</div>
+</div>
+
+  
